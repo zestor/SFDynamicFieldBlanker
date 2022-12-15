@@ -15,6 +15,7 @@ trigger TestDynamicFieldsTrigger on TestDynamicFields__c (before update)
         // first string = the fields and values which causes fields to be set to null
         // second string = the fields to set to null
         // add mappings in order of expected execution
+        // example has the mapping table in Map, but could easily be in custom metadata type
         Map<String,String> FieldMappings = new Map<String,String>();
         FieldMappings.put('picklist1__c=Value1,picklist2__c=Value1,','show2__c,show4__c');
         FieldMappings.put('picklist1__c=Value2,picklist2__c=Value2,','show1__c,show3__c');
