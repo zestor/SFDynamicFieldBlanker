@@ -1,6 +1,3 @@
-# SFDynamicFieldBlanker
-With Salesforce Dynamic Forms, on before update, blank fields which are not visible
-
 trigger TestDynamicFieldsTrigger on TestDynamicFields__c (before update) 
 {
     String selectedObject = 'TestDynamicFields__c';
@@ -47,6 +44,4 @@ trigger TestDynamicFieldsTrigger on TestDynamicFields__c (before update)
         }
     }
 }
-
-
 
