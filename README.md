@@ -1,5 +1,7 @@
 # SFDynamicFieldBlanker
-With Salesforce Dynamic Forms, on before update, blank fields which are not visible
+With Salesforce Dynamic Forms, on before update, blank fields which are not visible.
+
+While salesforce only saves visible fields on create with dynamic forms. When you edit records fields which are not visible are not automatically cleared to null. This example allows for easy configuration of field scenarios for which to clear other fields by setting them to null.
 
 trigger TestDynamicFieldsTrigger on TestDynamicFields__c (before update) 
 {
@@ -10,6 +12,9 @@ trigger TestDynamicFieldsTrigger on TestDynamicFields__c (before update)
         // IMPORTANT: the field names must be in lowercase alphabetical order
         // Since Summer 2015 release, iteration order for Maps and Sets has been predictable
         // Elements are returned in the same order they were added
+        // first string = the fields and values which causes fields to be set to null
+        // second string = the fields to set to null
+        // add mappings in order of expected execution
         Map<String,String> FieldMappings = new Map<String,String>();
         FieldMappings.put('picklist1__c=Value1,picklist2__c=Value1,','show2__c,show4__c');
         FieldMappings.put('picklist1__c=Value2,picklist2__c=Value2,','show1__c,show3__c');
