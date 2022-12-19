@@ -32,6 +32,16 @@ public class BlankFieldsTriggerHelperTest {
             new_o.Show5__c = 'Show5b';
             update new_o;
 
+            new_o.Picklist1__c = 'Value2';
+            new_o.Picklist2__c = 'Value2';
+            new_o.Picklist3__c = 'Guardians of the Galaxy';
+            new_o.Show1__c = 'Show1b';
+            new_o.Show2__c = 'Show2b';
+            new_o.Show3__c = 'Show3b';
+            new_o.Show4__c = 'Show4b';
+            new_o.Show5__c = 'Show5b';
+            update new_o;
+
             TestDynamicFields__c old_o = new TestDynamicFields__c();
     
             String fieldsValues = BlankFieldsTriggerHelper.getFieldsValues(selectedObject, fieldsToCheck, new_o, old_o);
